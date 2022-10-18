@@ -10,6 +10,14 @@ string s;
 getline(cin, s);
 cout << s;
 ```
+---
+
+>최대값
+- max 함수
+
+```c
+max(a, b);
+```
 
 ---
 
