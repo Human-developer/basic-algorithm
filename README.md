@@ -36,7 +36,7 @@ for (int i = 0; i < 21; i++)
 ```
 
 ---
->STL vector
+>STL 벡터 (vector)
 - 기본 사용 방법
 
 ```c
@@ -75,7 +75,7 @@ for (int i = 0; i <= v1.size()-1; i++)
 ```
 
 ---
->STL list
+>STL 리스트 (list)
 - 기본 사용 방법
 
 ```c
@@ -102,9 +102,8 @@ for(list<int>::iterator it = L.begin(); it != L.end(); it++)
 ```
 
 ---
->STL stack
+>STL 스택 (stack)
 - 기본 사용 방법
-
 
 ```c
 stack<int> S;
@@ -121,4 +120,52 @@ cout << S.top() << '\n'; // 10
 S.pop(); // empty
 if(S.empty()) cout << "S is empty\n"; // S is empty
 cout << S.top() << '\n'; // runtime error 발생
+```
+
+---
+>STL 큐 (queue)
+- 기본 사용 방법
+
+```c
+queue<int> Q;
+Q.push(10); // 10
+Q.push(20); // 10 20
+Q.push(30); // 10 20 30
+cout << Q.size() << '\n'; // 3
+if(Q.empty()) cout << "Q is empty\n";
+else cout << "Q is not empty\n"; // Q is not empty
+Q.pop(); // 20 30
+cout << Q.front() << '\n'; // 20
+cout << Q.back() << '\n'; // 30
+Q.push(40); // 20 30 40
+Q.pop(); // 30 40
+cout << Q.front() << '\n'; // 30
+```
+
+---
+>STL 덱 (deque)
+- 기본 사용 방법
+```c
+deque<int> DQ;
+DQ.push_front(10); // 10
+DQ.push_back(50); // 10 50
+DQ.push_front(24); // 24 10 50
+for(auto x : DQ)cout<<x;
+cout << DQ.size() << '\n'; // 3
+if(DQ.empty()) cout << "DQ is empty\n";
+else cout << "DQ is not empty\n"; // DQ is not empty
+DQ.pop_front(); // 10 50
+DQ.pop_back(); // 10
+cout << DQ.back() << '\n'; // 10
+DQ.push_back(72); // 10 72
+cout << DQ.front() << '\n'; // 10
+DQ.push_back(12); // 10 72 12
+DQ[2] = 17; // 10 72 17
+DQ.insert(DQ.begin()+1, 33); // 10 33 72 17
+DQ.insert(DQ.begin()+4, 60); // 10 33 72 17 60
+for(auto x : DQ) cout << x << ' ';
+cout << '\n';
+DQ.erase(DQ.begin()+3); // 10 33 72 60
+cout << DQ[3] << '\n'; // 60
+DQ.clear(); // DQ의 모든 원소 제거
 ```
